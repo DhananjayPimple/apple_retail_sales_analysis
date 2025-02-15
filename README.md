@@ -1,14 +1,15 @@
-![Apple](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/0x0.webp)
+## Apple Store's Retail Sales Data Analysis Using SQL
+
+![Apple](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/0x0.webp) 
 
 ## Project Overview
 
-This project is designed to showcase advanced SQL querying techniques through the analysis of over 1 million rows of Apple retail sales data. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally. By tackling a variety of questions, from basic to complex, you'll demonstrate your ability to write sophisticated SQL queries that extract valuable insights from large datasets.
-
-The project is ideal for data analysts looking to enhance their SQL skills by working with a large-scale dataset and solving real-world business questions.
+This project involves a comprehensive analysis of over 1 million rows of Apple Store's retail sales data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally.
 
 ## Entity Relationship Diagram (ERD)
 
-![ERD]()
+![ERD](https://github.com/user-attachments/assets/3ad9ae27-0674-4316-9175-02a0cbac72a2)
+
 
 
 ---
@@ -49,7 +50,10 @@ The project uses five main tables:
 
 ## Objectives
 
-The project is split into three tiers of questions to test SQL skills of increasing complexity:
+- Analyze the sales distribution of Apple products across various geographical locations (i.e. cities, countries).
+- Find out 
+- List and analyze content based on release years, countries, and durations.
+- Explore and categorize content based on specific criteria and keywords.
 
 ### Easy to Medium (10 Questions)
 
@@ -72,7 +76,7 @@ The project is split into three tiers of questions to test SQL skills of increas
 14. List the months in the last three years where sales exceeded 5,000 units in the USA.
 15. Identify the product category with the most warranty claims filed in the last two years.
 
-### Complex (5 Questions)
+### Complex (6 Questions)
 
 16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 17. Analyze the year-by-year growth ratio for each store.
