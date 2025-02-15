@@ -62,6 +62,7 @@ FROM stores
 GROUP BY country
 ORDER BY number_of_stores DESC ;
 ```
+![Ans1](Q1.png)
 
 ### 2. Calculate the total number of units sold by each store.
 
@@ -72,7 +73,7 @@ JOIN sales AS s2 ON s1.store_id = s2.store_id
 GROUP BY s1.store_id, s1.store_name
 ORDER BY Total_Units DESC ;
 ```
-
+![Ans2](Q2.png)
 
 ### 3. Identify how many sales occurred in December 2023.
 
@@ -90,6 +91,7 @@ SELECT COUNT(sale_id) AS Total_Sales
 FROM sales
 WHERE TO_CHAR(sale_date, 'MM-YYYY') = '12-2023' ;
 ```
+![Ans3](Q3.png)
 
 ### 4. Determine how many stores have never had a warranty claim filed.
 
@@ -117,6 +119,7 @@ SELECT COUNT(store_id) AS no_of_stores
 FROM stores 
 WHERE store_id NOT IN (SELECT store_id FROM claims) ;
 ```
+![Ans4](Q4.png)
 
 ### 5. Calculate the percentage of warranty claims marked as "Warranty Void".
 
@@ -125,6 +128,7 @@ SELECT ROUND((COUNT(claim_id) / (SELECT COUNT(*) FROM warranty) :: numeric) * 10
 FROM warranty
 WHERE repair_status = 'Warranty Void' ;
 ```
+![Ans5](Q5.png)
 
 ### 6. Identify which store had the highest total units sold in the last year.
 
@@ -137,6 +141,7 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
 LIMIT 1 ;
 ```
+![Ans6](Q6.png)
 
 ### 7. Count the number of unique products sold in the last year.
 
@@ -145,6 +150,7 @@ SELECT COUNT(DISTINCT(product_id)) AS no_of_unique_products_sold
 FROM sales 
 WHERE sale_date >= (SELECT MAX(sale_date) FROM sales) - INTERVAL '1 YEAR' ;
 ```
+![Ans7](Q7.png)
 
 ### 8. Find the average price of products in each category.
 
@@ -155,6 +161,7 @@ JOIN category AS c ON p.category_id = c.category_id
 GROUP BY 1, 2
 ORDER BY 2 ASC ;
 ```
+![Ans8](Q8.png)
 
 ### 9. How many warranty claims were filed in 2020?
 
@@ -163,6 +170,7 @@ SELECT COUNT(*) AS total_claims
 FROM warranty
 WHERE EXTRACT(YEAR FROM claim_date) = 2020 ;
 ```
+![Ans9](Q9.png)
 
 ### 10. For each store, identify the best-selling day based on highest quantity sold.
 
@@ -177,6 +185,7 @@ FROM
 )AS sub
 WHERE sub.rank = 1 ;
 ```
+![Ans10](Q10.png)
 
 ### 11. Identify the least selling product in each country for each year based on total units sold.
 
@@ -195,6 +204,7 @@ SELECT *
 FROM product_rank
 WHERE rank = 1 ;
 ```
+![Ans11](Q11.png)
 
 ### 12. Calculate how many warranty claims were filed within 180 days of a product sale.
 
@@ -204,6 +214,7 @@ FROM sales AS s
 JOIN warranty AS w ON s.sale_id = w.sale_id
 WHERE claim_date - sale_date <= 180 ;
 ```
+![Ans12](Q12.png)
 
 ### 13. Determine how many warranty claims were filed for products launched in the last two years.
 
@@ -216,6 +227,7 @@ WHERE p.launch_date >= (SELECT MAX(launch_date) FROM products) - INTERVAL '2 Yea
 GROUP BY 1
 HAVING COUNT(claim_id) > 0 ;
 ```
+![Ans13](Q13.png)
 
 ### 14. List the months in the last three years where sales exceeded 5,000 units in the USA.
 
@@ -231,6 +243,7 @@ WHERE
 GROUP BY 1
 HAVING SUM(s1.quantity) > 5000 ;
 ```
+![Ans14](Q14.png)
 
 ### 15. Identify the product category with the most warranty claims filed in the last two years.
 
@@ -244,6 +257,7 @@ WHERE w.claim_date >= (SELECT MAX(sale_date) FROM sales) - INTERVAL '2 YEAR'
 GROUP BY 1, 2 
 ORDER BY claims_filed DESC ;
 ```
+![Ans15](Q15.png)
 
 ### 16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 
@@ -263,6 +277,7 @@ FROM
 )AS sub
 ORDER BY 3 DESC ;
 ```
+![Ans16](Q16.png)
 
 ### 17. Analyze the year-by-year growth ratio for each store.
 
@@ -303,6 +318,7 @@ WHERE
 	AND
 	year <> EXTRACT(YEAR FROM CURRENT_DATE) ;
 ```
+![Ans17](Q17.png)
 
 ### 18. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
 
@@ -327,6 +343,7 @@ ORDER BY 2 DESC ;
 	
 */
 ```
+![Ans18](Q18.png)
 
 ### 19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
 
@@ -365,6 +382,7 @@ SELECT
 FROM All_Claims AS ac
 JOIN Paid_Repaired_Claims AS prc ON ac.store_id = prc.store_id ;
 ```
+![Ans19](Q19.png)
 
 ### 20. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 
@@ -394,6 +412,7 @@ SELECT
 	SUM(total_revenue) OVER(PARTITION BY store_id ORDER BY year, month) AS running_total
 FROM monthly_sales ;
 ```
+![Ans20](Q20.png)
 
 ### 21. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months, 12-18 months, and beyond 18 months.
 
@@ -412,36 +431,8 @@ JOIN products AS p ON s.product_id = p.product_id
 GROUP BY 1, 2
 ORDER BY 1, 3 DESC ;
 ```
+![Ans21](Q21.png)
 
-### Easy to Medium (10 Questions)
-
-1. Find the number of stores in each country.
-2. Calculate the total number of units sold by each store.
-3. Identify how many sales occurred in December 2023.
-4. Determine how many stores have never had a warranty claim filed.
-5. Calculate the percentage of warranty claims marked as "Warranty Void".
-6. Identify which store had the highest total units sold in the last year.
-7. Count the number of unique products sold in the last year.
-8. Find the average price of products in each category.
-9. How many warranty claims were filed in 2020?
-10. For each store, identify the best-selling day based on highest quantity sold.
-
-### Medium to Hard (5 Questions)
-
-11. Identify the least selling product in each country for each year based on total units sold.
-12. Calculate how many warranty claims were filed within 180 days of a product sale.
-13. Determine how many warranty claims were filed for products launched in the last two years.
-14. List the months in the last three years where sales exceeded 5,000 units in the USA.
-15. Identify the product category with the most warranty claims filed in the last two years.
-
-### Complex (6 Questions)
-
-16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
-17. Analyze the year-by-year growth ratio for each store.
-18. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
-19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
-20. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
-21. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months, 12-18 months, and beyond 18 months.
 
 ## Project Focus
 
@@ -456,12 +447,18 @@ This project primarily focuses on developing and showcasing the following SQL sk
 
 ## Dataset
 
-- **Size**: 1 million+ rows of sales data.
+- **Size**: 1 million+ rows of sales data (sales table).
 - **Period Covered**: The data spans multiple years, allowing for long-term trend analysis.
 - **Geographical Coverage**: Sales data from Apple stores across various countries.
+- **Data Source**: https://www.kaggle.com/datasets
 
 ## Conclusion
 
-By completing this project, you will develop advanced SQL querying skills, improve your ability to handle large datasets, and gain practical experience in solving complex data analysis problems that are crucial for business decision-making. This project is an excellent addition to your portfolio and will demonstrate your expertise in SQL to potential employers.
-
+- UK being country having highest no of Apple stores and Apple South Coast Plaza (USA) is a store having highest no of products sales.
+- 58 out of 73 stores have never had a warranty claim filed.
+- Laptop, Desktop & Smartphone in order have the highest avg price among all the products category available.
+- Smartphone, Tablet & Wearable in order have the highest warranty claims filed among all the products category available.
+- UAE, Spain & Itly in order have the highest percentage chance of receiving warranty claims among all the other countries.
+- There is a negative correlation between price of product and no of warranty claims received as the price of product increases the no. of claims decreases. (i.e. Affordable products receive most wrranty claims while Expensive products receive least.)
+	
 ---
