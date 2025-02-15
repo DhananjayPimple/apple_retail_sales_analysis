@@ -6,12 +6,6 @@
 
 This project involves a comprehensive analysis of over 1 million rows of Apple Store's retail sales data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally.
 
-## Entity Relationship Diagram (ERD)
-
-![ERD](https://github.com/user-attachments/assets/3ad9ae27-0674-4316-9175-02a0cbac72a2)
-
----
-
 ## Database Schema
 
 The project uses five main tables:
@@ -46,6 +40,10 @@ The project uses five main tables:
    - `sale_id`: References the sales table.
    - `repair_status`: Status of the warranty claim (e.g., Paid Repaired, Warranty Void).
 
+   ## Entity Relationship Diagram (ERD)
+
+   ![ERD](https://github.com/user-attachments/assets/3ad9ae27-0674-4316-9175-02a0cbac72a2)
+
 ## Objectives
 
 - Analyze the sales distribution of Apple products across various geographical locations (i.e. cities, countries).
@@ -53,6 +51,18 @@ The project uses five main tables:
 - Study the after sales service (i.e. warranty related issues) of differnt Apple stores.
 - Explore the performance of different Apple products interms of sales.
 - Prob into the realationship (If Any) between the products and their after sales service.
+
+## Business Problems & Their Solution.
+
+### 1. Find the number of stores in each country.
+
+```sql
+SELECT country, COUNT(store_id) AS number_of_stores
+FROM stores 
+GROUP BY country
+ORDER BY number_of_stores DESC ;
+```
+
 
 ### Easy to Medium (10 Questions)
 
