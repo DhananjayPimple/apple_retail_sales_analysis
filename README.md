@@ -10,8 +10,6 @@ This project involves a comprehensive analysis of over 1 million rows of Apple S
 
 ![ERD](https://github.com/user-attachments/assets/3ad9ae27-0674-4316-9175-02a0cbac72a2)
 
-
-
 ---
 
 ## Database Schema
@@ -51,9 +49,10 @@ The project uses five main tables:
 ## Objectives
 
 - Analyze the sales distribution of Apple products across various geographical locations (i.e. cities, countries).
-- Find out 
-- List and analyze content based on release years, countries, and durations.
-- Explore and categorize content based on specific criteria and keywords.
+- Find out sales of Apple products across different time frames (i.e. month, year, date).
+- Study the after sales service (i.e. warranty related issues) of differnt Apple stores.
+- Explore the performance of different Apple products interms of sales.
+- Prob into the realationship (If Any) between the products and their after sales service.
 
 ### Easy to Medium (10 Questions)
 
