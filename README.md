@@ -73,6 +73,7 @@ GROUP BY s1.store_id, s1.store_name
 ORDER BY Total_Units DESC ;
 ```
 
+
 ### 3. Identify how many sales occurred in December 2023.
 
 ```sql
