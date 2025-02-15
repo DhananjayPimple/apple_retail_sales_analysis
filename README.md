@@ -1,4 +1,4 @@
-(https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/0x0.webp)
+![Apple](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/0x0.webp)
 
 ## Project Overview
 
