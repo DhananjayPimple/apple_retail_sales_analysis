@@ -454,7 +454,7 @@ This project primarily focuses on developing and showcasing the following SQL sk
 
 ## Conclusion
 
-- UK being country having highest no of Apple stores and Apple South Coast Plaza (USA) is a store having highest no of products sales.
+- UK being a country having highest no of Apple stores and Apple South Coast Plaza (USA) is a store having highest no of products sales.
 - 58 out of 73 stores have never had a warranty claim filed.
 - Laptop, Desktop & Smartphone in order have the highest avg price among all the products category available.
 - Smartphone, Tablet & Wearable in order have the highest warranty claims filed among all the products category available.
