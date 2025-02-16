@@ -62,7 +62,7 @@ FROM stores
 GROUP BY country
 ORDER BY number_of_stores DESC ;
 ```
-![Ans1](Q1.png)
+![Ans1](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q1.png?raw=true)
 
 ### 2. Calculate the total number of units sold by each store.
 
@@ -73,7 +73,7 @@ JOIN sales AS s2 ON s1.store_id = s2.store_id
 GROUP BY s1.store_id, s1.store_name
 ORDER BY Total_Units DESC ;
 ```
-![Ans2](Q2.png)
+![Ans2](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q2.png?raw=true)
 
 ### 3. Identify how many sales occurred in December 2023.
 
@@ -91,7 +91,7 @@ SELECT COUNT(sale_id) AS Total_Sales
 FROM sales
 WHERE TO_CHAR(sale_date, 'MM-YYYY') = '12-2023' ;
 ```
-![Ans3](Q3.png)
+![Ans3](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q3.png?raw=true)
 
 ### 4. Determine how many stores have never had a warranty claim filed.
 
@@ -119,7 +119,7 @@ SELECT COUNT(store_id) AS no_of_stores
 FROM stores 
 WHERE store_id NOT IN (SELECT store_id FROM claims) ;
 ```
-![Ans4](Q4.png)
+![Ans4](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q4.png?raw=true)
 
 ### 5. Calculate the percentage of warranty claims marked as "Warranty Void".
 
@@ -128,7 +128,7 @@ SELECT ROUND((COUNT(claim_id) / (SELECT COUNT(*) FROM warranty) :: numeric) * 10
 FROM warranty
 WHERE repair_status = 'Warranty Void' ;
 ```
-![Ans5](Q5.png)
+![Ans5](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q5.png?raw=true)
 
 ### 6. Identify which store had the highest total units sold in the last year.
 
@@ -141,7 +141,7 @@ GROUP BY 1, 2
 ORDER BY 3 DESC
 LIMIT 1 ;
 ```
-![Ans6](Q6.png)
+![Ans6](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q6.png?raw=true)
 
 ### 7. Count the number of unique products sold in the last year.
 
@@ -150,7 +150,7 @@ SELECT COUNT(DISTINCT(product_id)) AS no_of_unique_products_sold
 FROM sales 
 WHERE sale_date >= (SELECT MAX(sale_date) FROM sales) - INTERVAL '1 YEAR' ;
 ```
-![Ans7](Q7.png)
+![Ans7](Qhttps://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q7.png?raw=true)
 
 ### 8. Find the average price of products in each category.
 
@@ -161,7 +161,7 @@ JOIN category AS c ON p.category_id = c.category_id
 GROUP BY 1, 2
 ORDER BY 2 ASC ;
 ```
-![Ans8](Q8.png)
+![Ans8](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q8.png?raw=true)
 
 ### 9. How many warranty claims were filed in 2020?
 
@@ -170,7 +170,7 @@ SELECT COUNT(*) AS total_claims
 FROM warranty
 WHERE EXTRACT(YEAR FROM claim_date) = 2020 ;
 ```
-![Ans9](Q9.png)
+![Ans9](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q9.png?raw=true)
 
 ### 10. For each store, identify the best-selling day based on highest quantity sold.
 
@@ -185,7 +185,7 @@ FROM
 )AS sub
 WHERE sub.rank = 1 ;
 ```
-![Ans10](Q10.png)
+![Ans10](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q10.png?raw=true)
 
 ### 11. Identify the least selling product in each country for each year based on total units sold.
 
@@ -204,7 +204,7 @@ SELECT *
 FROM product_rank
 WHERE rank = 1 ;
 ```
-![Ans11](Q11.png)
+![Ans11](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q11.png?raw=true)
 
 ### 12. Calculate how many warranty claims were filed within 180 days of a product sale.
 
@@ -214,7 +214,7 @@ FROM sales AS s
 JOIN warranty AS w ON s.sale_id = w.sale_id
 WHERE claim_date - sale_date <= 180 ;
 ```
-![Ans12](Q12.png)
+![Ans12](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q12.png?raw=true)
 
 ### 13. Determine how many warranty claims were filed for products launched in the last two years.
 
@@ -227,7 +227,7 @@ WHERE p.launch_date >= (SELECT MAX(launch_date) FROM products) - INTERVAL '2 Yea
 GROUP BY 1
 HAVING COUNT(claim_id) > 0 ;
 ```
-![Ans13](Q13.png)
+![Ans13](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q13.png?raw=true)
 
 ### 14. List the months in the last three years where sales exceeded 5,000 units in the USA.
 
@@ -243,7 +243,7 @@ WHERE
 GROUP BY 1
 HAVING SUM(s1.quantity) > 5000 ;
 ```
-![Ans14](Q14.png)
+![Ans14](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q14.png?raw=true)
 
 ### 15. Identify the product category with the most warranty claims filed in the last two years.
 
@@ -257,7 +257,7 @@ WHERE w.claim_date >= (SELECT MAX(sale_date) FROM sales) - INTERVAL '2 YEAR'
 GROUP BY 1, 2 
 ORDER BY claims_filed DESC ;
 ```
-![Ans15](Q15.png)
+![Ans15](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q15.png?raw=true)
 
 ### 16. Determine the percentage chance of receiving warranty claims after each purchase for each country.
 
@@ -277,7 +277,7 @@ FROM
 )AS sub
 ORDER BY 3 DESC ;
 ```
-![Ans16](Q16.png)
+![Ans16](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q16.png?raw=true)
 
 ### 17. Analyze the year-by-year growth ratio for each store.
 
@@ -318,7 +318,7 @@ WHERE
 	AND
 	year <> EXTRACT(YEAR FROM CURRENT_DATE) ;
 ```
-![Ans17](Q17.png)
+![Ans17](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q17.png?raw=true)
 
 ### 18. Calculate the correlation between product price and warranty claims for products sold in the last five years, segmented by price range.
 
@@ -343,7 +343,7 @@ ORDER BY 2 DESC ;
 	
 */
 ```
-![Ans18](Q18.png)
+![Ans18](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q18.png?raw=true)
 
 ### 19. Identify the store with the highest percentage of "Paid Repaired" claims relative to total claims filed.
 
@@ -382,7 +382,7 @@ SELECT
 FROM All_Claims AS ac
 JOIN Paid_Repaired_Claims AS prc ON ac.store_id = prc.store_id ;
 ```
-![Ans19](Q19.png)
+![Ans19](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q19.png?raw=true)
 
 ### 20. Write a query to calculate the monthly running total of sales for each store over the past four years and compare trends during this period.
 
@@ -412,7 +412,7 @@ SELECT
 	SUM(total_revenue) OVER(PARTITION BY store_id ORDER BY year, month) AS running_total
 FROM monthly_sales ;
 ```
-![Ans20](Q20.png)
+![Ans20](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q20.png?raw=true)
 
 ### 21. Analyze product sales trends over time, segmented into key periods: from launch to 6 months, 6-12 months, 12-18 months, and beyond 18 months.
 
@@ -431,7 +431,7 @@ JOIN products AS p ON s.product_id = p.product_id
 GROUP BY 1, 2
 ORDER BY 1, 3 DESC ;
 ```
-![Ans21](Q21.png)
+![Ans21](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q21.png?raw=true)
 
 
 ## Project Focus
