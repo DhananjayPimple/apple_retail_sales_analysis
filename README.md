@@ -150,7 +150,7 @@ SELECT COUNT(DISTINCT(product_id)) AS no_of_unique_products_sold
 FROM sales 
 WHERE sale_date >= (SELECT MAX(sale_date) FROM sales) - INTERVAL '1 YEAR' ;
 ```
-![Ans7](Qhttps://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q7.png?raw=true)
+![Ans7](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q7.png?raw=true)
 
 ### 8. Find the average price of products in each category.
 
