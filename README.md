@@ -2,7 +2,7 @@
 
 ![Apple](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/0x0.webp) 
 
-## Project Overview
+## 📖 Project Overview
 
 This project involves a comprehensive analysis of over 1 million rows of Apple Store's retail sales data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally.
 
