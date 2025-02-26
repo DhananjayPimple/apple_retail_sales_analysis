@@ -444,14 +444,6 @@ This project primarily focuses on developing and showcasing the following SQL sk
 - **Correlation Analysis**: Applying SQL functions to determine relationships between variables, such as product price and warranty claims.
 - **Real-World Problem Solving**: Answering business-related questions that reflect real-world scenarios faced by data analysts.
 
-
-## Dataset
-
-- **Size**: 1 million+ rows of sales data (sales table).
-- **Period Covered**: The data spans multiple years, allowing for long-term trend analysis.
-- **Geographical Coverage**: Sales data from Apple stores across various countries.
-- **Data Source**: https://www.kaggle.com/datasets
-
 ## Conclusion
 
 - UK being a country having highest no of Apple stores and Apple South Coast Plaza (USA) is a store having highest no of products sales.
@@ -460,5 +452,12 @@ This project primarily focuses on developing and showcasing the following SQL sk
 - Smartphone, Tablet & Wearable in order have the highest warranty claims filed among all the products category available.
 - UAE, Spain & Itly in order have the highest percentage chance of receiving warranty claims among all the other countries.
 - There is a negative correlation between price of product and no of warranty claims received as the price of product increases the no. of claims decreases. (i.e. Affordable products receive most wrranty claims while Expensive products receive least.)
+
+## Dataset
+
+- **Size**: 1 million+ rows of sales data (sales table).
+- **Period Covered**: The data spans multiple years, allowing for long-term trend analysis.
+- **Geographical Coverage**: Sales data from Apple stores across various countries.
+- **Data Source**: https://www.kaggle.com/datasets
 	
 ---
