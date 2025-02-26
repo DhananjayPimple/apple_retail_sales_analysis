@@ -6,7 +6,7 @@
 
 This project involves a comprehensive analysis of over 1 million rows of Apple Store's retail sales data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions. The dataset includes information about products, stores, sales transactions, and warranty claims across various Apple retail locations globally.
 
-## Database Schema
+## 🛢 Database Schema
 
 The project uses five main tables:
 
@@ -40,11 +40,11 @@ The project uses five main tables:
    - `sale_id`: References the sales table.
    - `repair_status`: Status of the warranty claim (e.g., Paid Repaired, Warranty Void).
 
-   ## Entity Relationship Diagram (ERD)
+   ## 📌 Entity Relationship Diagram (ERD)
 
    ![ERD](https://github.com/user-attachments/assets/3ad9ae27-0674-4316-9175-02a0cbac72a2)
 
-## Objectives
+## 🎯 Objectives
 
 - Analyze the sales distribution of Apple products across various geographical locations (i.e. cities, countries).
 - Find out sales of Apple products across different time frames (i.e. month, year, date).
@@ -52,7 +52,7 @@ The project uses five main tables:
 - Explore the performance of different Apple products interms of sales.
 - Prob into the realationship (If Any) between the products and their after sales service.
 
-## Business Problems & Their Solution.
+## 💡 Business Problems & Their Solution.
 
 ### 1. Find the number of stores in each country.
 
@@ -434,7 +434,7 @@ ORDER BY 1, 3 DESC ;
 ![Ans21](https://github.com/DhananjayPimple/apple_retail_sales_analysis/blob/main/Query%20Result%20Snapshots/Q21.png?raw=true)
 
 
-## Project Focus
+## 🔬 Project Focus
 
 This project primarily focuses on developing and showcasing the following SQL skills:
 
@@ -444,7 +444,7 @@ This project primarily focuses on developing and showcasing the following SQL sk
 - **Correlation Analysis**: Applying SQL functions to determine relationships between variables, such as product price and warranty claims.
 - **Real-World Problem Solving**: Answering business-related questions that reflect real-world scenarios faced by data analysts.
 
-## Conclusion
+## ✅ Conclusion
 
 - UK being a country having highest no of Apple stores and Apple South Coast Plaza (USA) is a store having highest no of products sales.
 - 58 out of 73 stores have never had a warranty claim filed.
@@ -453,7 +453,7 @@ This project primarily focuses on developing and showcasing the following SQL sk
 - UAE, Spain & Itly in order have the highest percentage chance of receiving warranty claims among all the other countries.
 - There is a negative correlation between price of product and no of warranty claims received as the price of product increases the no. of claims decreases. (i.e. Affordable products receive most wrranty claims while Expensive products receive least.)
 
-## Dataset
+## 📂 Dataset
 
 - **Size**: 1 million+ rows of sales data (sales table).
 - **Period Covered**: The data spans multiple years, allowing for long-term trend analysis.
